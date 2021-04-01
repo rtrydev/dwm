@@ -1709,7 +1709,6 @@ tile(Monitor *m)
 {
 	unsigned int i, n, h, r, g=0, mw, my, ty;
 	Client *c;
-	unsigned int gappx = 4;
 
 	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
 	if (n == 0)
