@@ -1302,8 +1302,8 @@ resizeclient(Client *c, int x, int y, int w, int h)
 		/* Remove border and gap if layout is monocle or only one client */
 		if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) {
 			gapoffset = 0;
-			gapincr = -2 * borderpx;
-			wc.border_width = 0;
+			gapincr = 0;
+			wc.border_width = 1;
 		} else {
 			gapoffset = gappx;
 			gapincr = 2 * gappx;

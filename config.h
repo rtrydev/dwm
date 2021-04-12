@@ -6,8 +6,8 @@ static const unsigned int gappx     = 4;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Liberation:size=11" };
+static const char dmenufont[]       = "Liberation:size=11";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -69,7 +69,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_darkgray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "rofi" ,"-show", "run", "-modi", "run", "-location", "2", "-width" "100",
+"-lines", "2", "-line-margin", "0" ,"-line-padding", "1","-separator-style", "none",
+"-font", "mono 10" ,"-columns", "9", "-bw", "0" ,"-disable-history" , "-hide-scrollbar", 
+"-color-window","argb:cc111122, argb:cc111122, #b1b4b3" ,
+"-color-normal", "argb:cc111122, #b1b4b3, argb:cc111122, #005577, #b1b4b3" ,
+"-color-active", "argb:cc111122, #b1b4b3, argb:cc111122, #007763, #b1b4b3",
+"-color-urgent", "argb:cc111122, #b1b4b3, argb:cc111122, #77003d, #b1b4b3",
+"-kb-row-select", "Tab" ,"-kb-row-tab", "",NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
